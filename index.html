@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Toriii</title>
+    <title>For Victoria</title>
     <style>
         body {
             background-color: #ffb6c1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh; 
-            overflow-y: auto; /* This fixes the "no swiping" issue */
+            min-height: 100vh;
+            overflow-y: auto;
             margin: 0;
             padding: 20px;
             font-family: 'Arial', sans-serif;
@@ -19,58 +19,122 @@
             text-align: center;
         }
 
+        /* Intro Screen */
+        #intro {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #ffb6c1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            transition: opacity 0.8s ease;
+            cursor: pointer;
+        }
+
         .container {
             max-width: 450px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             padding: 25px;
             border-radius: 30px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             margin-top: 20px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            border: 4px solid white;
+        img { width: 100%; border-radius: 20px; border: 4px solid white; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        h1 { color: #d63384; font-size: 1.6rem; margin-bottom: 15px; }
+        p { font-size: 1.1rem; line-height: 1.6; padding: 0 5px; margin-bottom: 25px; }
+
+        /* Buttons Container */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 30px 0;
+            min-height: 100px;
+            position: relative;
         }
 
-        h1 {
+        button {
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        #yesBtn { background: #ff4d6d; color: white; z-index: 2; }
+        #noBtn { background: #888; color: white; position: absolute; z-index: 1; transition: 0.1s ease; }
+
+        .signature {
+            margin-top: 20px;
+            font-size: 1.3rem;
             color: #d63384;
-            font-size: 2rem;
+            font-weight: bold;
+            font-style: italic;
         }
 
-        p {
-            font-size: 1.1rem;
-            line-height: 1.5;
-        }
-
-        .heart {
-            font-size: 50px;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        /* Animations */
+        .heart-loader { font-size: 80px; animation: pulse 1.2s infinite; }
+        @keyframes pulse { 
+            0%, 100% { transform: scale(1); } 
+            50% { transform: scale(1.3); } 
         }
     </style>
 </head>
 <body>
 
-    <div class="heart">💝</div>
-
-    <div class="container">
-        <img src="IMG_0661.jpeg" alt="Valentine Photo 1">
-        
-        <h1>Hey Toriii 💖</h1>
-        
-        <p>Hey Toriii, I know how everything is and I know I won't be able to eat your booty like groceries anytime soon 😭 but would you be my valentine? 🥺💞</p>
-        
-        <img src="IMG_0662.jpeg" alt="Valentine Photo 2">
+    <div id="intro" onclick="this.style.opacity='0'; setTimeout(()=>this.remove(), 800)">
+        <div class="heart-loader">💝</div>
+        <h2 style="color: white; font-family: cursive;">For Ms Victoria...<br>(Tap to open)</h2>
     </div>
 
+    <div class="container">
+        <img src="IMG_0661.jpeg" alt="Us">
+        
+        <h1>For Victoria Winner Osas Sylvester 🥹</h1>
+        
+        <p>You’ve been a blessing to my life and I really do hope we face this thing called life Together ❤️. You’ve been an amazing person and you deserve the world and more and I know how things are rn and I know I won’t be able to eat your booty like groceries anytime soon 😂 but Would you be my valentine Ms Victoria Winner Osas Sylvester🥹 always and forever ❤️ whether you like it or not😂🫵🏾</p>
+        
+        <img src="IMG_0662.jpeg" alt="You">
+
+        <div class="btn-group">
+            <button id="yesBtn" onclick="accept()">YES! 🥰</button>
+            <button id="noBtn" onmouseover="moveNo()" onclick="moveNo()">No 😢</button>
+        </div>
+
+        <div class="signature">
+            From Papi ❤️😘😍
+        </div>
+    </div>
+
+    <script>
+        // Moves the No button when hovered or touched
+        function moveNo() {
+            const noBtn = document.getElementById('noBtn');
+            // Calculate safe area to move within (avoids moving off-screen)
+            const x = Math.random() * (window.innerWidth - 120);
+            const y = Math.random() * (window.innerHeight - 60);
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+
+        // Sends message directly to Papi's WhatsApp
+        function accept() {
+            const phoneNumber = "2348130742836"; // Your number with Nigeria code
+            const message = "Yes Papi! I will be your valentine! 🥰❤️ Always and forever!";
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.location.href = whatsappUrl;
+        }
+    </script>
 </body>
 </html>
