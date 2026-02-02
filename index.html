@@ -3,57 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day</title>
+    <title>For Toriii</title>
     <style>
         body {
-            background-color: #ffb6c1; /* Light Pink */
+            background-color: #ffb6c1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
+            /* Essential for swiping on mobile */
+            min-height: 100vh; 
+            overflow-y: auto; 
             margin: 0;
+            padding: 20px;
             font-family: 'Arial', sans-serif;
-            color: white;
-            overflow: hidden;
+            color: #333;
+            text-align: center;
         }
 
-        /* Entrance animation for the text */
+        .container {
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 25px;
+            border-radius: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 50px; /* Space at the bottom for scrolling */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border: 5px solid white;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         h1 {
-            font-size: 3rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            animation: fadeIn 2s ease-in;
+            color: #d63384;
+            font-size: 2.2rem;
+            margin: 20px 0;
         }
 
-        /* The floating heart */
-        .heart {
-            font-size: 100px;
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .heart-float {
+            font-size: 50px;
+            margin-bottom: 10px;
             animation: float 3s ease-in-out infinite;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .heart:hover {
-            transform: scale(1.2);
-        }
-
-        /* Animation Definitions */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
     </style>
 </head>
 <body>
 
-    <div class="heart">❤️</div>
-    <h1>Happy Valentine's Day!</h1>
+    <div class="heart-float">❤️</div>
+
+    <div class="container">
+        <img src="IMG_0661.jpeg" alt="Photo 1">
+        
+        <h1>Hey Toriii 💖</h1>
+        
+        <p>Hey Toriii, I know how everything is and I know I won't be able to eat your booty like groceries anytime soon 😭 but would you be my valentine? 🥺💞</p>
+        
+        <img src="IMG_0662.jpeg" alt="Photo 2">
+    </div>
 
 </body>
 </html>
