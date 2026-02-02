@@ -3,27 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Victoria</title>
+    <title>For My Victoria</title>
     <style>
         body {
-            background-color: #ffb6c1;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            overflow-x: hidden;
             overflow-y: auto;
             margin: 0;
             padding: 20px;
-            font-family: 'Arial', sans-serif;
-            color: #333;
+            font-family: 'Georgia', serif;
+            color: #4a4a4a;
             text-align: center;
         }
 
-        /* Intro Screen */
+        /* Floating Hearts Animation */
+        .falling-heart {
+            position: fixed;
+            top: -10%;
+            color: #ff4d6d;
+            font-size: 20px;
+            user-select: none;
+            z-index: -1;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+
         #intro {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: #ffb6c1;
+            background: #ff4d6d;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -35,79 +50,86 @@
 
         .container {
             max-width: 450px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 25px;
-            border-radius: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 40px;
+            box-shadow: 0 15px 35px rgba(214, 51, 132, 0.2);
             margin-top: 20px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
-        img { width: 100%; border-radius: 20px; border: 4px solid white; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        img { 
+            width: 100%; 
+            border-radius: 25px; 
+            margin-bottom: 25px; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
 
-        h1 { color: #d63384; font-size: 1.6rem; margin-bottom: 15px; }
-        p { font-size: 1.1rem; line-height: 1.6; padding: 0 5px; margin-bottom: 25px; }
+        p { 
+            font-size: 1.15rem; 
+            line-height: 1.7; 
+            color: #555;
+            font-style: italic;
+        }
 
-        /* Buttons Container */
         .btn-group {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 20px;
-            margin: 30px 0;
-            min-height: 100px;
+            margin: 40px 0;
+            min-height: 80px;
             position: relative;
         }
 
         button {
-            padding: 15px 35px;
-            font-size: 1.2rem;
-            border-radius: 50px;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            border-radius: 60px;
             border: none;
             cursor: pointer;
             font-weight: bold;
-            transition: transform 0.2s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
         }
 
-        #yesBtn { background: #ff4d6d; color: white; z-index: 2; }
-        #noBtn { background: #888; color: white; position: absolute; z-index: 1; transition: 0.1s ease; }
+        #yesBtn { background: #ff4d6d; color: white; }
+        
+        #noBtn { 
+            background: #ffffff; 
+            color: #ff4d6d; 
+            border: 2px solid #ff4d6d;
+            position: absolute; 
+            transition: 0.15s ease-out;
+        }
 
         .signature {
-            margin-top: 20px;
-            font-size: 1.3rem;
+            margin-top: 10px;
+            font-size: 1.4rem;
             color: #d63384;
-            font-weight: bold;
-            font-style: italic;
+            font-family: cursive;
         }
 
-        /* Animations */
-        .heart-loader { font-size: 80px; animation: pulse 1.2s infinite; }
-        @keyframes pulse { 
-            0%, 100% { transform: scale(1); } 
-            50% { transform: scale(1.3); } 
-        }
+        .heart-loader { font-size: 80px; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
     </style>
 </head>
 <body>
 
     <div id="intro" onclick="this.style.opacity='0'; setTimeout(()=>this.remove(), 800)">
-        <div class="heart-loader">💝</div>
-        <h2 style="color: white; font-family: cursive;">For Ms Victoria...<br>(Tap to open)</h2>
+        <div class="heart-loader">❤️</div>
+        <h2 style="color: white;">For Victoria...<br>(Tap to open)</h2>
     </div>
 
     <div class="container">
-        <img src="IMG_0661.jpeg" alt="Us">
+        <img src="IMG_0662.jpeg" alt="Our Moment">
         
-        <h1>For Victoria Winner Osas Sylvester 🥹</h1>
+        <p>You’ve been a blessing to my life and I really do hope we face this thing called life Together ❤️. You’ve been an amazing person and you deserve the world and more and I know how things are rn and I know I won’t be able to eat your booty like groceries anytime soon 😂 but Would you be my valentine Ms Victoria Winner Osas Sylvester? 🥹 always and forever ❤️ whether you like it or not😂🫵🏾</p>
         
-        <p>You’ve been a blessing to my life and I really do hope we face this thing called life Together ❤️. You’ve been an amazing person and you deserve the world and more and I know how things are rn and I know I won’t be able to eat your booty like groceries anytime soon 😂 but Would you be my valentine Ms Victoria Winner Osas Sylvester🥹 always and forever ❤️ whether you like it or not😂🫵🏾</p>
-        
-        <img src="IMG_0662.jpeg" alt="You">
+        <img src="IMG_0672.jpeg" alt="Love">
 
         <div class="btn-group">
             <button id="yesBtn" onclick="accept()">YES! 🥰</button>
-            <button id="noBtn" onmouseover="moveNo()" onclick="moveNo()">No 😢</button>
+            <button id="noBtn" onmouseover="moveNo()" ontouchstart="moveNo()">No 😢</button>
         </div>
 
         <div class="signature">
@@ -116,24 +138,30 @@
     </div>
 
     <script>
-        // Moves the No button when hovered or touched
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('falling-heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 300);
+
         function moveNo() {
             const noBtn = document.getElementById('noBtn');
-            // Calculate safe area to move within (avoids moving off-screen)
-            const x = Math.random() * (window.innerWidth - 120);
-            const y = Math.random() * (window.innerHeight - 60);
-            
+            const x = Math.random() * (window.innerWidth - 150);
+            const y = Math.random() * (window.innerHeight - 80);
             noBtn.style.position = 'fixed';
             noBtn.style.left = x + 'px';
             noBtn.style.top = y + 'px';
         }
 
-        // Sends message directly to Papi's WhatsApp
         function accept() {
-            const phoneNumber = "2348130742836"; // Your number with Nigeria code
-            const message = "Yes Papi! I will be your valentine! 🥰❤️ Always and forever!";
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.location.href = whatsappUrl;
+            const phoneNumber = "2348130742836";
+            const message = "Yes Papi! I will be your valentine! 🥰❤️ You had me at 'always and forever'!";
+            window.location.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         }
     </script>
 </body>
