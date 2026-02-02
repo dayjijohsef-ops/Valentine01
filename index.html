@@ -1,231 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Toriii 💖</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <style>
+        body {
+            background-color: #ffb6c1; /* Light Pink */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            overflow: hidden;
+        }
 
-<style>
-*{box-sizing:border-box;}
+        /* Entrance animation for the text */
+        h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: fadeIn 2s ease-in;
+        }
 
-body{
-    margin:0;
-    padding:0;
-    background: radial-gradient(circle at top, #ff4d6d, #1a001f);
-    font-family:'Segoe UI', sans-serif;
-    height:100vh;
-    overflow:hidden;
-    color:white;
-}
+        /* The floating heart */
+        .heart {
+            font-size: 100px;
+            animation: float 3s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
 
-/* INTRO SCREEN */
-.intro{
-    position:fixed;
-    top:0;left:0;
-    width:100%;height:100%;
-    background:linear-gradient(135deg,#000,#2a001f);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    z-index:999;
-    animation: fadeIn 1.5s ease;
-}
+        .heart:hover {
+            transform: scale(1.2);
+        }
 
-.intro h1{
-    font-size:2em;
-    text-align:center;
-    margin-bottom:20px;
-    color:#ffb3c6;
-}
+        /* Animation Definitions */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-.intro button{
-    padding:15px 40px;
-    border:none;
-    border-radius:40px;
-    font-size:1.1em;
-    cursor:pointer;
-    background:#ff4d6d;
-    color:white;
-    box-shadow:0 0 20px rgba(255,77,109,0.6);
-    transition:0.3s;
-}
-
-.intro button:hover{
-    transform:scale(1.1);
-}
-
-/* MAIN CARD */
-.container{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height:100vh;
-}
-
-.card{
-    background:rgba(255,255,255,0.95);
-    color:#222;
-    padding:25px;
-    border-radius:25px;
-    text-align:center;
-    box-shadow:0 20px 50px rgba(0,0,0,0.5);
-    max-width:380px;
-    animation: float 3s ease-in-out infinite;
-    position:relative;
-}
-
-.card img{
-    width:100%;
-    border-radius:18px;
-    margin-bottom:10px;
-}
-
-h1{
-    color:#e63946;
-}
-
-p{
-    font-size:1.05em;
-    line-height:1.6;
-}
-
-.buttons{
-    position:relative;
-    height:80px;
-    margin-top:15px;
-}
-
-button{
-    padding:12px 28px;
-    border:none;
-    border-radius:30px;
-    font-size:1em;
-    cursor:pointer;
-    position:absolute;
-    transition:0.2s;
-}
-
-.yes{
-    background:#e63946;
-    color:white;
-    left:30px;
-}
-
-.no{
-    background:#ddd;
-    color:#444;
-    right:30px;
-}
-
-/* HEARTS */
-.heart{
-    position:absolute;
-    font-size:22px;
-    animation: fall 6s linear infinite;
-    pointer-events:none;
-}
-
-/* ANIMATIONS */
-@keyframes fall{
-    0%{transform:translateY(-10vh);opacity:1;}
-    100%{transform:translateY(110vh);opacity:0;}
-}
-
-@keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-    100%{transform:translateY(0);}
-}
-
-@keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
-}
-</style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- INTRO -->
-<div class="intro" id="intro">
-    <h1>Toriii 💖<br>Something special is waiting for you…</h1>
-    <button onclick="start()">Enter 💘</button>
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="container" style="display:none;" id="main">
-    <div class="card" id="card">
-
-        <!-- YOUR IMAGES -->
-        <img src="pic1.jpg">
-        <img src="pic2.jpg">
-
-        <h1>Hey Toriii 💖</h1>
-
-        <p>
-        Hey Toriii, I know how everything is and I know I won’t be able to eat your booty like groceries anytime soon 😭  
-        but would you be my valentine? 🥹  
-        <br><br>
-        Now and forever whether you like it or not 😌💞
-        </p>
-
-        <div class="buttons">
-            <button class="yes" onclick="yesClick()">Yes 😍</button>
-            <button class="no" id="noBtn">No 🙈</button>
-        </div>
-
-    </div>
-</div>
-
-<script>
-/* INTRO */
-function start(){
-    document.getElementById("intro").style.display="none";
-    document.getElementById("main").style.display="flex";
-}
-
-/* YES CLICK */
-function yesClick(){
-    document.getElementById("card").innerHTML = `
-        <h1>She Said Yes 😭💖</h1>
-        <p>
-        Valentine secured 🔐💘<br><br>
-        Love locked. Future activated.  
-        Heart officially taken 😌🔥
-        </p>
-    `;
-}
-
-/* SMART MOVING NO BUTTON */
-const noBtn = document.getElementById("noBtn");
-
-noBtn.addEventListener("mouseover", moveNo);
-noBtn.addEventListener("click", moveNo);
-
-function moveNo(){
-    const container = document.querySelector(".buttons");
-    const maxX = container.offsetWidth - 100;
-    const maxY = container.offsetHeight - 40;
-
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
-
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
-}
-
-/* FLOATING HEARTS */
-setInterval(()=>{
-    const heart=document.createElement("div");
-    heart.className="heart";
-    heart.innerHTML="💖";
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.animationDuration=(3+Math.random()*4)+"s";
-    document.body.appendChild(heart);
-    setTimeout(()=>heart.remove(),6000);
-},300);
-</script>
+    <div class="heart">❤️</div>
+    <h1>Happy Valentine's Day!</h1>
 
 </body>
 </html>
