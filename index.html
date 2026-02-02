@@ -10,9 +10,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* Essential for swiping on mobile */
             min-height: 100vh; 
-            overflow-y: auto; 
+            overflow-y: auto; /* This fixes the "no swiping" issue */
             margin: 0;
             padding: 20px;
             font-family: 'Arial', sans-serif;
@@ -21,61 +20,56 @@
         }
 
         .container {
-            max-width: 500px;
-            background: rgba(255, 255, 255, 0.85);
+            max-width: 450px;
+            background: rgba(255, 255, 255, 0.9);
             padding: 25px;
             border-radius: 30px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            margin-bottom: 50px; /* Space at the bottom for scrolling */
+            margin-top: 20px;
+            margin-bottom: 50px;
         }
 
         img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
             border-radius: 20px;
             margin-bottom: 20px;
-            border: 5px solid white;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+            border: 4px solid white;
         }
 
         h1 {
             color: #d63384;
-            font-size: 2.2rem;
-            margin: 20px 0;
+            font-size: 2rem;
         }
 
         p {
             font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
+            line-height: 1.5;
         }
 
-        .heart-float {
+        .heart {
             font-size: 50px;
-            margin-bottom: 10px;
-            animation: float 3s ease-in-out infinite;
+            animation: bounce 2s infinite;
         }
 
-        @keyframes float {
+        @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
 <body>
 
-    <div class="heart-float">❤️</div>
+    <div class="heart">💝</div>
 
     <div class="container">
-        <img src="IMG_0661.jpeg" alt="Photo 1">
+        <img src="IMG_0661.jpeg" alt="Valentine Photo 1">
         
         <h1>Hey Toriii 💖</h1>
         
         <p>Hey Toriii, I know how everything is and I know I won't be able to eat your booty like groceries anytime soon 😭 but would you be my valentine? 🥺💞</p>
         
-        <img src="IMG_0662.jpeg" alt="Photo 2">
+        <img src="IMG_0662.jpeg" alt="Valentine Photo 2">
     </div>
 
 </body>
